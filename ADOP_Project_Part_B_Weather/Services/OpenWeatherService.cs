@@ -52,7 +52,7 @@ namespace ADOP_Project_Part_B_Weather.Services
                     Temperature = wdle.main.temp,
                     WindSpeed = wdle.wind.speed,
                     Description = wdle.weather.First().description,
-                    Icon = $"http://openweathermap.org/img/w/{wdle.weather.First().icon}.png"
+                    Icon = $"https://openweathermap.org/img/w/{wdle.weather.First().icon}.png"
                 }).ToList()
             };
             return forecast;
