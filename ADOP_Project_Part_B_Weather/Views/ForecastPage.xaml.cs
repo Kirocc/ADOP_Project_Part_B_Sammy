@@ -29,6 +29,9 @@ namespace ADOP_Project_Part_B_Weather.Views
             this.city = city;
             service = new OpenWeatherService();
             groupedforecast = new GroupedForecast();
+            
+
+
         }
 
         protected override void OnAppearing()
@@ -47,8 +50,11 @@ namespace ADOP_Project_Part_B_Weather.Views
         {
             Forecast forecast = await service.GetForecastAsync(city.Name);
 
+            groupedforecast.Items = forecast.Items.GroupBy(d => d.DateTime).ToList();
+
             //Here Group your forecast and bind it to your
+            ForecastListView.ItemsSource = forecast.Items;
             //ListView ItemSource
         }
-    }
+    } 
 }

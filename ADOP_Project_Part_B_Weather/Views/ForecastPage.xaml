@@ -4,21 +4,38 @@
              x:Class="ADOP_Project_Part_B_Weather.Views.ForecastPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Refresh" Clicked="Button_Clicked" />
+            <Button Text="Refresh" Clicked="Button_Clicked" x:Name="Refresh_button" />
 
-            <!-- Your XAML code to present the weather data in a ListView-->
-            <!-- 
-            <ListView x:Name="GroupedForecast" IsGroupingEnabled="true" HasUnevenRows="true">
+            <!--Your XAML code to present the weather data in a ListView-->
+            
+            <ListView Margin="10, 0" x:Name="ForecastListView" Header="Forecast" IsGroupingEnabled="False" HasUnevenRows="true" >
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                     </DataTemplate>
                 </ListView.GroupHeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="0, 5"
+                                         Orientation="Horizontal"
+                                         Spacing="6">
+                                <BoxView Color="Blue"
+                                         HeightRequest="60" 
+                                         WidthRequest="60" />
+                                <StackLayout VerticalOptions="Center">
+                                    <Label Text="{Binding city}"  />
+                                    <Label Text="{Binding Description}"  />
+                                    <Label Text="{Binding Temperature}" />
+                                    </StackLayout>
+                                    </StackLayout>
+
+
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            -->
+            
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

@@ -1,12 +1,17 @@
-﻿namespace ADOP_Project_Part_B_Weather;
+﻿using ADOP_Project_Part_B_Weather.Views;
+
+namespace ADOP_Project_Part_B_Weather;
 
 public partial class MainPage : ContentPage
 {
 	int count = 0;
+	
 
 	public MainPage()
 	{
 		InitializeComponent();
+		
+		
 	}
 
 	private void OnCounterClicked(object sender, EventArgs e)

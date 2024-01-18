@@ -16,7 +16,7 @@ namespace ADOP_Project_Part_B_Weather.Services
         HttpClient httpClient = new HttpClient();
         
         //Your API Key
-        readonly string apiKey = "";
+        readonly string apiKey = "15b2f87e7a75752f81a38bd74471757f";
 
         public async Task<Forecast> GetForecastAsync(string City)
         {
