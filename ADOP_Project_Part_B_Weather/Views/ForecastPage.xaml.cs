@@ -30,6 +30,7 @@ namespace ADOP_Project_Part_B_Weather.Views
             service = new OpenWeatherService();
             groupedforecast = new GroupedForecast();
             
+            
 
 
         }
@@ -48,12 +49,17 @@ namespace ADOP_Project_Part_B_Weather.Views
 
         private async Task LoadForecast()
         {
+            
             Forecast forecast = await service.GetForecastAsync(city.Name);
 
-            groupedforecast.Items = forecast.Items.GroupBy(d => d.DateTime).ToList();
+            
+             groupedforecast.Items = forecast.Items.GroupBy(d => d.DateTime).ToList();
+            
+
+          
 
             //Here Group your forecast and bind it to your
-            ForecastListView.ItemsSource = forecast.Items;
+            ForecastListView.ItemsSource = groupedforecast.Items;
             //ListView ItemSource
         }
     } 
