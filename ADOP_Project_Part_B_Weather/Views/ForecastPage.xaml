@@ -42,8 +42,18 @@
                             
                                 
                                 <StackLayout  VerticalOptions="Center">
-                                
-                               
+                                <Image
+                                    
+                                    Source="{Binding Icon}"
+                                VerticalOptions="Center"
+                                HeightRequest="200" 
+                                WidthRequest="200"
+   
+                                 >
+                                    
+
+                                </Image>
+
 
                                 <Label Text="{Binding WindSpeed}" HorizontalOptions="Center" />
                                 <Label Text="m/s" HorizontalOptions="CenterAndExpand" />

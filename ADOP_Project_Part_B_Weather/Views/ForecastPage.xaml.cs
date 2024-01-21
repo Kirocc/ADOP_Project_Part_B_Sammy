@@ -61,6 +61,7 @@ namespace ADOP_Project_Part_B_Weather.Views
 
             //Here Group your forecast and bind it to your
             ForecastListView.ItemsSource = groupedforecast.Items;
+            
             //ListView ItemSource
         }
     } 
