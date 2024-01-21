@@ -29,6 +29,7 @@ namespace ADOP_Project_Part_B_Weather.Views
             this.city = city;
             service = new OpenWeatherService();
             groupedforecast = new GroupedForecast();
+            Cityimage.Source = city.ImageSrc; 
             
             
 

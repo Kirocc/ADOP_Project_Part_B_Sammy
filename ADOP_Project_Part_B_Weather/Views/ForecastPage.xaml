@@ -5,16 +5,22 @@
     <ContentPage.Content>
         <StackLayout>
             <Button Text="Refresh" Clicked="Button_Clicked" x:Name="Refresh_button" />
-            <Image   Source="{Binding City}">
-           </Image>
+            <Image
+     x:Name="Cityimage"
+      
+     VerticalOptions="Center"
+      HeightRequest="200" 
+      WidthRequest="200" >
+
+            </Image>
 
             <!--Your XAML code to present the weather data in a ListView-->
             
-            <ListView Margin="10, 0" x:Name="ForecastListView" Header="Forecast" IsGroupingEnabled="True" HasUnevenRows="false" >
+            <ListView Margin="10, 0" x:Name="ForecastListView" Header="Forecast" IsGroupingEnabled="True" HasUnevenRows="True" >
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="0, 5" BackgroundColor="DarkSalmon"
+                            <StackLayout Padding="0, 5" BackgroundColor="DarkCyan"
                               Orientation="Horizontal"
                               Spacing="6">
                                 <Label Text="{Binding Key, StringFormat= ´{0}´ }"  ></Label>
@@ -37,14 +43,10 @@
                                 
                                 <StackLayout  VerticalOptions="Center">
                                 
-                                <BoxView 
-                                     Color="Blue"
-                                     HeightRequest="60" 
-                                     WidthRequest="60" >
-                                    
-                                </BoxView>
+                               
 
-                                <Label Text="{Binding Windspeed} " HorizontalOptions="Center"/>
+                                <Label Text="{Binding WindSpeed}" HorizontalOptions="Center" />
+                                <Label Text="m/s" HorizontalOptions="CenterAndExpand" />
                                 <Label Text="{Binding Description}" HorizontalOptions="Center"/>
                                 <Label Text="{Binding Temperature}" HorizontalOptions="Center"/>
                                 </StackLayout>
