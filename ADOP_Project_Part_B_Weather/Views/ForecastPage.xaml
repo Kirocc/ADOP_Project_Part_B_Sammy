@@ -55,8 +55,8 @@
                                 </Image>
 
 
-                                <Label Text="{Binding WindSpeed}" HorizontalOptions="Center" />
-                                <Label Text="m/s" HorizontalOptions="CenterAndExpand" />
+                                <Label Text="{Binding WindSpeed,StringFormat='{0}m/s'}" HorizontalOptions="Center" /> 
+                                <Label Text="" HorizontalOptions="CenterAndExpand" />
                                 <Label Text="{Binding Description}" HorizontalOptions="Center"/>
                                 <Label Text="{Binding Temperature}" HorizontalOptions="Center"/>
                                 </StackLayout>
