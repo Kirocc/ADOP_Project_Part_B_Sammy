@@ -57,7 +57,6 @@ namespace ADOP_Project_Part_B_Weather.Views
              groupedforecast.Items = forecast.Items.GroupBy(d => d.DateTime).ToList();
             
 
-          
 
             //Here Group your forecast and bind it to your
             ForecastListView.ItemsSource = groupedforecast.Items;

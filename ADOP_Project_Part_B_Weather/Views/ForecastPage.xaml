@@ -20,19 +20,13 @@
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="0, 5" BackgroundColor="DarkCyan"
-                              Orientation="Horizontal"
-                              Spacing="6">
-                                <Label Text="{Binding Key, StringFormat= ´{0}´ }"  ></Label>
+                            <StackLayout Padding="0, 5" BackgroundColor="DarkCyan" 
+                              Orientation="Vertical"  VerticalOptions="Center"
+                              Spacing="10">
+                                <Label Text="{Binding Key.Day, StringFormat='Den {0}'}"  ></Label>
+                                <Label Text="{Binding Key.Month, StringFormat='Månad {0}'}"  ></Label>
+                                <Label Text="{Binding Key.Year, StringFormat='{0}'}"  ></Label>
                             </StackLayout>
-
-
-
-
-
-
-
-
                         </ViewCell>
                     </DataTemplate>
                 </ListView.GroupHeaderTemplate>
@@ -44,7 +38,7 @@
                                 <StackLayout  VerticalOptions="Center">
                                 <Image
                                     
-                                    Source="{Binding Icon}"
+                                Source="{Binding Icon}"
                                 VerticalOptions="Center"
                                 HeightRequest="200" 
                                 WidthRequest="200"
@@ -55,10 +49,9 @@
                                 </Image>
 
 
-                                <Label Text="{Binding WindSpeed,StringFormat='{0}m/s'}" HorizontalOptions="Center" /> 
-                                <Label Text="" HorizontalOptions="CenterAndExpand" />
+                                <Label Text="{Binding WindSpeed,StringFormat='{0} m/s'}" HorizontalOptions="Center" /> 
                                 <Label Text="{Binding Description}" HorizontalOptions="Center"/>
-                                <Label Text="{Binding Temperature}" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Temperature, StringFormat='{0} Celsius'}" HorizontalOptions="Center"/>
                                 </StackLayout>
                                     
 
