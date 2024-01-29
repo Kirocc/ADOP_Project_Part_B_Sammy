@@ -12,6 +12,7 @@ namespace ADOP_Project_Part_B_Weather.Views
 {
     public class GroupedForecast
     {
+        
         public string City { get; set; }
         public IEnumerable<IGrouping<DateTime, ForecastItem>> Items { get; set; }
     }
@@ -21,6 +22,8 @@ namespace ADOP_Project_Part_B_Weather.Views
         OpenWeatherService service;
         GroupedForecast groupedforecast;
         CityPicture city;
+        public string Month;
+
 
         public ForecastPage(CityPicture city)
         {
@@ -54,9 +57,12 @@ namespace ADOP_Project_Part_B_Weather.Views
             Forecast forecast = await service.GetForecastAsync(city.Name);
 
             
-             groupedforecast.Items = forecast.Items.GroupBy(d => d.DateTime).ToList();
+             groupedforecast.Items = forecast.Items.GroupBy(d => d.DateTime.Date).ToList();
+
             
 
+            
+            
 
             //Here Group your forecast and bind it to your
             ForecastListView.ItemsSource = groupedforecast.Items;
